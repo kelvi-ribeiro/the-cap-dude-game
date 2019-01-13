@@ -2,9 +2,76 @@ img{
     cursor: pointer;
 }
 #img-boy{
-    position: relative;
-    
+    position: relative;    
 }
+
+.img-boy{
+    left: 130px;    
+    position: relative;
+
+}
+#img-boy-left{
+    animation: move_boy_left .9s ease-out infinite alternate-reverse;;    
+}
+
+@keyframes move_boy_left {
+    from{
+        transform: translateX(-30%) 
+        translateZ(0);
+    }
+    to{
+        transform: translateX(0%)
+        translateZ(0);        
+    }                
+}
+
+#img-boy-right{
+    animation: move_boy_right .9s ease-out infinite alternate-reverse;;    
+}
+
+@keyframes move_boy_right {
+    from{
+        transform: translateX(30%) 
+        translateZ(0);
+    }
+    to{
+        transform: translateX(0%)
+        translateZ(0);        
+    }                
+}
+
+#img-boy-up{
+    animation: move_boy_up .9s ease-out infinite alternate-reverse;    
+}
+
+@keyframes move_boy_up {
+    from{
+        transform: translateY(-30%) 
+        translateX(0);
+    }
+    to{
+        transform: translateY(0%)
+        translateX(0);        
+    }               
+}
+
+
+#img-boy-down{
+    animation: move_boy_down .9s ease-out infinite alternate-reverse;;    
+}
+
+@keyframes move_boy_down {
+    from{
+        transform: translateY(30%) 
+        translateX(0);
+    }
+    to{
+        transform: translateY(0%)
+        translateX(0);        
+    }               
+}
+
+
 #arrow-right{
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
