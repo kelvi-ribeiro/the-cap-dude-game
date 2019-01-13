@@ -11,6 +11,61 @@
 </head>
 
 <body>
+  <nav class="nav">
+    <div class="nav-left">
+      <a class="nav-item">
+        <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">
+      </a>
+    </div>
+  
+    <div class="nav-center">
+      <a class="nav-item">
+        <span class="icon">
+          <i class="fa fa-github"></i>
+        </span>
+      </a>
+      <a class="nav-item">
+        <span class="icon">
+          <i class="fa fa-twitter"></i>
+        </span>
+      </a>
+    </div>
+  
+    <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+    <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+    <span class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  
+    <!-- This "nav-menu" is hidden on mobile -->
+    <!-- Add the modifier "is-active" to display it on mobile -->
+    <div class="nav-right nav-menu">
+      <a id="home" class="nav-item">
+        Home
+      </a>
+      <a  id="btn-handle-debugger" class="nav-item">
+        Ligar Debuggers
+      </a>    
+  
+      <span class="nav-item">
+        <a href="https://www.linkedin.com/in/kelvi-ribeiro" target="_blank"  class="button" >
+          <span class="icon">
+            <i class="fa fa-linkedin"></i>
+          </span>
+          <span>Meu Linkedin</span>
+        </a>
+        <a href="https://github.com/kelvi-ribeiro" target="_blank" class="button is-primary">
+          <span class="icon">
+            <i class="fa fa-github"></i>
+          </span>
+          <span>Github</span>
+        </a>
+      </span>
+    </div>
+  </nav>
+
   <div class="container is-fluid">
     <div id="tutorial-mode">
       <div class="column is-full">
@@ -47,9 +102,11 @@
         </div>
 
         <div class="box has-text-centered is-suc">
-            <a class="button is-large is-success is-fullwidth">Começar o Jogo</a>
+            <a id="start-game" class="button is-large is-success is-fullwidth">Começar o Jogo</a>
           </div>
+        </div>
       </div>
+      <div id="game-mode"></div>
     </div>    
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>

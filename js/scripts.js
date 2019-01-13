@@ -33,7 +33,25 @@ const boyPosition = {
     $('#btn-handle-debugger').text('Ligar Debuggers')
     return;
   }
-  
+  function enableGameMode(){
+    $('#tutorial-mode').each(function() {
+        $(this).remove();        
+    });
+    $('#game-mode').append(
+        `  <div class="has-text-centered">          
+          <img id="img-boy" src="img/boy.png" alt="Boy">      
+        </div>            
+        `
+    )
+  }
+  $('#start-game').click(function(){
+    enableGameMode()    
+  });
+
+  $('#home').click(function(){
+    location.reload();
+  });
+
   $('#arrow-left').click(function(){      
     $('#img-boy').css("right",boyPosition.right += 5)
   });
