@@ -3,7 +3,7 @@ img{
 }
 #img-boy{
     position: relative;
-    cursor: pointer;
+    
 }
 #arrow-right{
     -moz-transform: scaleX(-1);
