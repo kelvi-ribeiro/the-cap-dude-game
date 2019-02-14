@@ -108,7 +108,7 @@ $("body").keydown(function(e) {
     if(($('#img-boy').offset().left + speedMove * 4) > $( document ).width()) return
     $('#img-boy').css("right",boyPosition.right -= speedMove)
   }else if(e.keyCode == valueArrows.down){    
-    if(($('#img-boy').offset().top + speedMove * 4) > $( document ).height()) return
+    if(($('#img-boy').offset().top + speedMove * 5) > $( document ).height()) return
       if(($('#img-boy').offset().top - $(window).scrollTop() + speedMove) < 0) return;
       if(($('#img-boy').offset().top - $(window).scrollTop() + speedMove) > $(window).height()) return;
     $('#img-boy').css("top",boyPosition.top += speedMove)
