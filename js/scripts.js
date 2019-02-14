@@ -1,6 +1,6 @@
 const boyPosition = {
     right:0,        
-    top:0        
+    top:0 
   } 
   
   var infoDebuggers = [];
@@ -54,17 +54,23 @@ const boyPosition = {
     },tempoCriacaoNovoPoint)
     
   }
+  $( window ).resize(function() {    
+    $('#img-boy').css("top",boyPosition.top = $( document ).height()  / 2)
+    $('#img-boy').css("right",boyPosition.right = 0)
+  });
   function enableGameMode(){
     $('#tutorial-mode').each(function() {
         $(this).remove();        
     });
     //startCreatePointRed()
+    
     $('#game-mode').append(
         `  <div class="has-text-centered">          
         <img id="img-boy" src="img/boy.png" alt="Boy">      
         </div>                   
         `      
         )
+    $('#img-boy').css("top",boyPosition.top = $( document ).height()  / 2)
   }
   function verifyAvatarPositionIsEqualToRedDot(){
     const boyPosition = {
