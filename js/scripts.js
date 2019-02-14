@@ -58,7 +58,7 @@ const boyPosition = {
     $('#tutorial-mode').each(function() {
         $(this).remove();        
     });
-    startCreatePointRed()
+    //startCreatePointRed()
     $('#game-mode').append(
         `  <div class="has-text-centered">          
         <img id="img-boy" src="img/boy.png" alt="Boy">      
@@ -88,11 +88,14 @@ const boyPosition = {
 
 $("body").keydown(function(e) {
   if(e.keyCode == 37) { // left        
+    if($('#img-boy').offset().left - speedMove < 0) return
     $('#img-boy').css("right",boyPosition.right += speedMove)
   }
   else if(e.keyCode == 39) { // right
+    if(($('#img-boy').offset().left + speedMove * 4) > $( document ).width()) return
     $('#img-boy').css("right",boyPosition.right -= speedMove)
   }else if(e.keyCode == 40){
+    if(($('#img-boy').offset().top + speedMove * 4) > $( document ).height()) return
       if(($('#img-boy').offset().top - $(window).scrollTop() + speedMove) < 0) return;
       if(($('#img-boy').offset().top - $(window).scrollTop() + speedMove) > $(window).height()) return;
     $('#img-boy').css("top",boyPosition.top += speedMove)
