@@ -2,6 +2,13 @@ const boyPosition = {
     right:0,        
     top:0 
   } 
+
+  const valueArrows = {
+    top:38,
+    right:39,
+    down:40,
+    left:37
+  }
   
   var infoDebuggers = [];
 
@@ -93,19 +100,19 @@ const boyPosition = {
   });
 
 $("body").keydown(function(e) {
-  if(e.keyCode == 37) { // left        
+  if(e.keyCode == valueArrows.left) { 
     if($('#img-boy').offset().left - speedMove < 0) return
     $('#img-boy').css("right",boyPosition.right += speedMove)
   }
-  else if(e.keyCode == 39) { // right
+  else if(e.keyCode == valueArrows.right) { // right    
     if(($('#img-boy').offset().left + speedMove * 4) > $( document ).width()) return
     $('#img-boy').css("right",boyPosition.right -= speedMove)
-  }else if(e.keyCode == 40){
+  }else if(e.keyCode == valueArrows.down){    
     if(($('#img-boy').offset().top + speedMove * 4) > $( document ).height()) return
       if(($('#img-boy').offset().top - $(window).scrollTop() + speedMove) < 0) return;
       if(($('#img-boy').offset().top - $(window).scrollTop() + speedMove) > $(window).height()) return;
     $('#img-boy').css("top",boyPosition.top += speedMove)
-  }else if(e.keyCode == 38){            
+  }else if(e.keyCode ==  valueArrows.top){            
     if(($('#img-boy').offset().top - $(window).scrollTop() - speedMove) < 0) return;
     if(($('#img-boy').offset().top - $(window).scrollTop() - (speedMove + $('.nav-background').height())) < 0) return;
     
