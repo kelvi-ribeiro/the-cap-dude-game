@@ -12,9 +12,8 @@ const boyPosition = {
 
   var scrollHeight = 1000;
 
-  const tempoCriacaoNovoPoint = 5000
+  const tempoCriacaoNovoPoint = 5000;
 
-  
   var debuggerMode = false;
   $('#btn-handle-debugger').click(function(){
     handleDebuggers()
@@ -99,7 +98,9 @@ $("body").keydown(function(e) {
     $('#img-boy').css("top",boyPosition.top += speedMove)
   }else if(e.keyCode == 38){            
     if(($('#img-boy').offset().top - $(window).scrollTop() - speedMove) < 0) return;
+    if(($('#img-boy').offset().top - $(window).scrollTop() - (speedMove + $('.nav-background').height())) < 0) return;
+    
     $('#img-boy').css("top",boyPosition.top -= speedMove)
   }
-  verifyAvatarPositionIsEqualToRedDot()
+  //verifyAvatarPositionIsEqualToRedDot()
 });
