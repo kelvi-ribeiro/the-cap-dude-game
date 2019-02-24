@@ -51,16 +51,21 @@ const boyPosition = {
     $('#btn-handle-debugger').text('Ligar Debuggers')
     return;
   }
-  function startCreatePointRed(){
+  function startCreatePointRed(){    
     setInterval(function(){
+      const randomNumber = Math.floor(Math.random() * scrollHeight)
+      console.log(randomNumber)
+      if(randomNumber > $(document).height() || randomNumber  > ( $(document).height() * 0.80 )) {        
+        return
+      }
       $('#point-red').remove()
       $('#game-mode').append(
         `
-        <div id="point-red" style="position:relative;top:${ Math.floor(Math.random() * (scrollHeight - 0) + 0)}px;left:${ Math.floor(Math.random() * (scrollHeight - 0) + 0)}px;">
+        <div id="point-red" style="position:relative;top:${randomNumber}px;left:${ Math.floor(Math.random() * (scrollHeight - 0) + 0)}px;">
         </div>
         `
       )
-    },tempoCriacaoNovoPoint)
+    },500)
     
   }
   $( window ).resize(function() {    
@@ -71,7 +76,7 @@ const boyPosition = {
     $('#tutorial-mode').each(function() {
         $(this).remove();        
     });
-    //startCreatePointRed()
+    startCreatePointRed()
     
     $('#game-mode').append(
         `  <div class="has-text-centered">          
