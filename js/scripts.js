@@ -53,21 +53,26 @@ const boyPosition = {
   }
   function startCreatePointRed(){    
     setInterval(function(){
-      const randomNumber = Math.floor(Math.random() * scrollHeight)
-      console.log(randomNumber)
-      if(randomNumber > $(document).height() || randomNumber  > ( $(document).height() * 0.80 )) {        
-        return
-      }
       $('#point-red').remove()
       $('#game-mode').append(
         `
-        <div id="point-red" style="position:relative;top:${randomNumber}px;left:${ Math.floor(Math.random() * (scrollHeight - 0) + 0)}px;">
+        <div id="point-red" style="position:relative;top:${ generateRandomNumberNotOutOfRange()}px;left:${ Math.floor(Math.random() * (scrollHeight - 0) + 0)}px;">
         </div>
         `
       )
     },tempoCriacaoNovoPoint)
     
   }
+
+  function generateRandomNumberNotOutOfRangeOfWindow(){
+    const randomNumber = Math.floor(Math.random() * scrollHeight)      
+    if(randomNumber > $(document).height() || randomNumber  > ( $(document).height() * 0.80 )){
+      return generateRandomNumberNotOutOfRange()
+
+    }
+    return randomNumber
+  }
+
   $( window ).resize(function() {    
     $('#img-boy').css("top",boyPosition.top = $( document ).height()  / 2)
     $('#img-boy').css("right",boyPosition.right = 0)
