@@ -65,7 +65,7 @@ const boyPosition = {
         </div>
         `
       )
-    },500)
+    },tempoCriacaoNovoPoint)
     
   }
   $( window ).resize(function() {    
