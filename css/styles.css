@@ -111,5 +111,9 @@ a.nav-item:hover{
     font-weight: 600;
 }
 
+.nav-toggle:hover {
+    background-color: #363636;
+}
+
 
 

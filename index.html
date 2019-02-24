@@ -12,14 +12,14 @@
 </head>
 
 <body>
-  <nav  class="nav nav-background">
+  <nav class="nav nav-background">
     <div class="nav-left">
       <a class="nav-item">
-        <img  class="img-logo" src="img/game-logo.png" alt="Bulma logo">
+        <img class="img-logo" src="img/game-logo.png" alt="Bulma logo">
         <h1 class="title-game">The Dot Hunt Game</h1>
       </a>
     </div>
-  
+
     <div class="nav-center">
       <a class="nav-item">
         <span class="icon">
@@ -32,7 +32,7 @@
         </span>
       </a>
     </div>
-  
+
     <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
     <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
     <span class="nav-toggle">
@@ -40,31 +40,24 @@
       <span></span>
       <span></span>
     </span>
-  
+
     <!-- This "nav-menu" is hidden on mobile -->
     <!-- Add the modifier "is-active" to display it on mobile -->
-    <div class="nav-right nav-menu">
+    <div id="menu-options" class="nav-right nav-menu  nav-background ">
       <a id="home" class="nav-item">
         Home
       </a>
-      <a  id="btn-handle-debugger" class="nav-item">
+      <a id="btn-handle-debugger" class="nav-item">
         Ligar Debuggers
-      </a>    
-  
-      <span class="nav-item">
-        <a href="https://www.linkedin.com/in/kelvi-ribeiro" target="_blank"  class="button" >
-          <span class="icon">
-            <i class="fa fa-linkedin"></i>
-          </span>
-          <span>Meu Linkedin</span>
-        </a>
-        <a href="https://github.com/kelvi-ribeiro" target="_blank" class="button is-primary">
-          <span class="icon">
-            <i class="fa fa-github"></i>
-          </span>
-          <span>Github</span>
-        </a>
-      </span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/kelvi-ribeiro" target="_blank" class="nav-item">        
+        <span>Meu Linkedin</span>
+      </a>
+
+      <a href="https://github.com/kelvi-ribeiro" target="_blank" class="nav-item">        
+        <span>Github</span>
+      </a>
     </div>
   </nav>
 
@@ -73,9 +66,9 @@
       <div class="column is-full">
         <div class="notification is-primary">
           <img id="arrow-left" src="./img/arrow.png" alt="">
-          Move para a Esquerda          
-            <img class="img-boy" id="img-boy-left" src="img/boy.png" alt="Boy">              
-            
+          Move para a Esquerda
+          <img class="img-boy" id="img-boy-left" src="img/boy.png" alt="Boy">
+
         </div>
       </div>
 
@@ -83,7 +76,7 @@
         <div class="notification is-primary">
           <img id="arrow-right" src="img/arrow.png" alt="">
           Move para a Direita
-          <img class="img-boy" id="img-boy-right" src="img/boy.png" alt="Boy">              
+          <img class="img-boy" id="img-boy-right" src="img/boy.png" alt="Boy">
         </div>
       </div>
 
@@ -92,7 +85,7 @@
         <div class="notification is-primary">
           <img id="arrow-top" src="img/arrow.png" alt="">
           Move para Cima
-          <img class="img-boy" id="img-boy-up" src="img/boy.png" alt="Boy">              
+          <img class="img-boy" id="img-boy-up" src="img/boy.png" alt="Boy">
         </div>
       </div>
 
@@ -100,16 +93,16 @@
         <div class="notification is-primary">
           <img id="arrow-bottom" src="img/arrow.png" alt="">
           Move para Baixo
-          <img class="img-boy" id="img-boy-down" src="img/boy.png" alt="Boy">              
+          <img class="img-boy" id="img-boy-down" src="img/boy.png" alt="Boy">
         </div>
 
         <div class="box has-text-centered is-suc">
-            <a id="start-game" class="button is-large is-success is-fullwidth">Começar o Jogo</a>
-          </div>
+          <a id="start-game" class="button is-large is-success is-fullwidth">Começar o Jogo</a>
         </div>
       </div>
-      <div id="game-mode"></div>
-    </div>    
+    </div>
+    <div id="game-mode"></div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="js/scripts.js"></script>

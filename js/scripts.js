@@ -9,6 +9,8 @@ const boyPosition = {
     down:40,
     left:37
   }
+
+  var isMenuOpened = false
   
   var infoDebuggers = [];
 
@@ -98,6 +100,27 @@ const boyPosition = {
   $('#home').click(function(){
     location.reload();
   });
+
+  $('.nav-toggle').click(function(){    
+    if(!isMenuOpened){
+      $('#menu-options').addClass( "is-active" );
+      $('.nav-toggle').addClass( "is-active" );
+      isMenuOpened = true      
+      return
+    }
+    $('#menu-options').removeClass( "is-active" );
+    $('.nav-toggle').removeClass( "is-active" );
+    isMenuOpened = false      
+  });
+  
+
+  function handleMenu(){
+    if(isMenuOpened){
+      isMenuOpened = false
+      return
+    }
+    isMenuOpened = true
+  }
 
 $("body").keydown(function(e) {
   if(e.keyCode == valueArrows.left) {     
