@@ -35,10 +35,10 @@ const boyPosition = {
       ligarDebugerers();         
   }
   function ligarDebugerers(){
-    instanceIntevervalInfoImgBoyTop = setInterval(function() {  console.log($('#img-boy').offset().top - $(window).scrollTop())}, 1000); 
+    instanceIntevervalInfoImgBoyTop = setInterval(function() {  console.log('Posição Y:', $('#img-boy').offset().top - $(window).scrollTop())}, 1000); 
     infoDebuggers.push(instanceIntevervalInfoImgBoyTop)
-    let instanceIntevervalInfoWindowHeight = setInterval(function() {  console.log($(window).height())}, 1000); 
-    infoDebuggers.push(instanceIntevervalInfoWindowHeight);
+    let instanceIntevervalInfoImgBoyLeft = setInterval(function() {  console.log('Posição X:',$('#img-boy').offset().left - $(window).scrollLeft())}, 1000); 
+    infoDebuggers.push(instanceIntevervalInfoImgBoyLeft);
     debuggerMode = true;
     $('#btn-handle-debugger').text('Desligar Debuggers')
   }
@@ -100,21 +100,28 @@ const boyPosition = {
   });
 
 $("body").keydown(function(e) {
-  if(e.keyCode == valueArrows.left) { 
-    if($('#img-boy').offset().left - speedMove < 0) return
+  if(e.keyCode == valueArrows.left) {     
+    if($('#img-boy').offset().left - speedMove < 0){
+      $('#img-boy').css("right",boyPosition.right  -= $( document ).width())
+      return
+    } 
     $('#img-boy').css("right",boyPosition.right += speedMove)
   }
-  else if(e.keyCode == valueArrows.right) { // right    
-    if(($('#img-boy').offset().left + speedMove * 4) > $( document ).width()) return
+  else if(e.keyCode == valueArrows.right) {
+    if(($('#img-boy').offset().left + speedMove * 4) > $( document ).width()){
+      $('#img-boy').css("right",boyPosition.right -= (( speedMove * 4 ) - $( document ).width()))  
+      return
+    } 
     $('#img-boy').css("right",boyPosition.right -= speedMove)
   }else if(e.keyCode == valueArrows.down){    
-    if(($('#img-boy').offset().top + speedMove * 5) > $( document ).height()) return
-      if(($('#img-boy').offset().top - $(window).scrollTop() + speedMove) < 0) return;
-      if(($('#img-boy').offset().top - $(window).scrollTop() + speedMove) > $(window).height()) return;
+    if(($('#img-boy').offset().top + speedMove * 5) > $( document ).height()){
+      $('#img-boy').css("top",boyPosition.top = 0)
+    }
     $('#img-boy').css("top",boyPosition.top += speedMove)
-  }else if(e.keyCode ==  valueArrows.top){            
-    if(($('#img-boy').offset().top - $(window).scrollTop() - speedMove) < 0) return;
-    if(($('#img-boy').offset().top - $(window).scrollTop() - (speedMove + $('.nav-background').height())) < 0) return;
+  }else if(e.keyCode ==  valueArrows.top){                
+    if(($('#img-boy').offset().top - $(window).scrollTop() - (speedMove + $('.nav-background').height())) < 0) {
+      $('#img-boy').css("top",boyPosition.top = $( document ).height())
+    }
     
     $('#img-boy').css("top",boyPosition.top -= speedMove)
   }
