@@ -56,7 +56,7 @@ const boyPosition = {
       $('#point-red').remove()
       $('#game-mode').append(
         `
-        <div id="point-red" style="position:relative;top:${ generateRandomNumberNotOutOfRange()}px;left:${ Math.floor(Math.random() * (scrollHeight - 0) + 0)}px;">
+        <div id="point-red" style="position:relative;top:${ generateRandomNumberNotOutOfRangeOfWindow()}px;left:${ Math.floor(Math.random() * (scrollHeight - 0) + 0)}px;">
         </div>
         `
       )
@@ -67,7 +67,7 @@ const boyPosition = {
   function generateRandomNumberNotOutOfRangeOfWindow(){
     const randomNumber = Math.floor(Math.random() * scrollHeight)      
     if(randomNumber > $(document).height() || randomNumber  > ( $(document).height() * 0.80 )){
-      return generateRandomNumberNotOutOfRange()
+      return generateRandomNumberNotOutOfRangeOfWindow()
 
     }
     return randomNumber
