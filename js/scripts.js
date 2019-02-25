@@ -135,7 +135,7 @@ const boyPosition = {
 $("body").keydown(function(e) {
   if(e.keyCode == valueArrows.left) {     
     if($('#img-boy').offset().left - speedMove < 0){
-      $('#img-boy').css("right",boyPosition.right  -= $( document ).width())
+      $('#img-boy').css("right",boyPosition.right  -= $( document ).width() * 0.93)
       return
     } 
     $('#img-boy').css("right",boyPosition.right += speedMove)
@@ -153,7 +153,7 @@ $("body").keydown(function(e) {
     $('#img-boy').css("top",boyPosition.top += speedMove)
   }else if(e.keyCode ==  valueArrows.top){                
     if(($('#img-boy').offset().top - $(window).scrollTop() - (speedMove + $('.nav-background').height())) < 0) {
-      $('#img-boy').css("top",boyPosition.top = $( document ).height())
+      $('#img-boy').css("top",boyPosition.top = $(window).height() * 0.85)
     }
     
     $('#img-boy').css("top",boyPosition.top -= speedMove)
