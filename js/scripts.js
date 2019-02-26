@@ -53,7 +53,7 @@ const boyPosition = {
   }
   function startCreatePointRed(){    
     setInterval(function(){  
-      $('#point-red').remove()    
+      $('#point-red').remove()   
       $('#game-mode').append(
         `
         <div id="point-red" style="position:absolute;top:${ generateRandomNumberNotOutOfRangeOfHeight()}px;left:${ Math.floor(Math.random() * (scrollHeight - 0) + 0)}px;">
@@ -66,7 +66,7 @@ const boyPosition = {
 
   function generateRandomNumberNotOutOfRangeOfHeight(){
     const randomNumber = Math.floor(Math.random() * scrollHeight)      
-    if(randomNumber  > ( $(document).height() * 0.92 )){
+    if(randomNumber  > ( $(document).height() * 0.90 )){
       return generateRandomNumberNotOutOfRangeOfHeight()
 
     }
